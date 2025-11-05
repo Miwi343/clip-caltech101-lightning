@@ -53,6 +53,9 @@ class SafeDataset(Dataset):
 
     def __len__(self):
         return len(self.base_dataset)
+    
+    def __getattr__(self, name):
+        return getattr(self.base_dataset, name)
 
 def split_dataset(dataset, train_fraction=0.75, seed=42):
     print("Splitting the dataset.")
@@ -65,16 +68,6 @@ def split_dataset(dataset, train_fraction=0.75, seed=42):
     train_set, val_set = random_split(dataset, [n_train, n_val], generator=generator)
 
     return train_set, val_set
-
-# def make_dataloaders(train_set, val_set, batch_size=32, num_workers=2):
-#     print("Loading the data.")
-    
-
-    
-#     return train_loader, val_loader
-
-
-
 
 def get_data_loaders():
 

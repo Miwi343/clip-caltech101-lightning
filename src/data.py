@@ -88,4 +88,5 @@ def get_data_loaders():
     return train_loader, val_loader, caltech_dataset
 
 
-t1, v1, ds = get_data_loaders()
+if __name__ == "__main__":
+    t1, v1, ds = get_data_loaders()

@@ -8,8 +8,8 @@ from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 
 import wandb
-from src.model import CLIPClassifier
-from src.data import get_data_loaders
+from model import CLIPClassifier
+from data import get_data_loaders
 
 
 def main():
